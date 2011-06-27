@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='scp://clintonmontague@host.oneltd.eu//home/sites/2degreesbusiness.com/_dev/wp-content/'
+let g:netrw_dirhist_2='scp://clintonmontague@host.oneltd.eu//home/sites/2degreesbusiness.com/_dev/wp-content/themes/'
+let g:netrw_dirhist_3='scp://clintonmontague@host.oneltd.eu//home/sites/2degreesbusiness.com/_dev/wp-content/themes/2dg/'
+let g:netrw_dirhist_4='scp://clintonmontague@host.oneltd.eu//home/sites/2degreesbusiness.com/'
+let g:netrw_dirhist_5='scp://clintonmontague@host.oneltd.eu//home/sites/'
+let g:netrw_dirhist_6='scp://clintonmontague@host.oneltd.eu//home/sites/3-monkeys.co.uk/'
+let g:netrw_dirhist_7='scp://clintonmontague@host.oneltd.eu//home/sites/3-monkeys.co.uk/www/'
+let g:netrw_dirhist_8='scp://clintonmontague@host.oneltd.eu//home/sites/3-monkeys.co.uk/www/contact/'
