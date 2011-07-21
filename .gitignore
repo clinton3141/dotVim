@@ -1,4 +1,7 @@
-.VimballRecord
-.DS_Store
-.netrwbook
-.netrwhist
+*.VimballRecord
+*.DS_Store
+*.netrwbook
+*.netrwhist
+
+.vim/tmp/*
+.vim/undo/*
