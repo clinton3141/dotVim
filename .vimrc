@@ -94,6 +94,9 @@ nmap <silent> <Leader>n :set invhls<CR>:set hls?<CR>
 " leader-v to select text which was just pasted. 
 nmap <Leader>v `[V`]
 
+nnoremap <Leader>, <<
+nnoremap <Leader>. >>
+
 
 " OTHER KEY MAPPINGS
 " disable arrow keys in normal/visual modes
