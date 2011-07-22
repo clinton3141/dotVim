@@ -26,7 +26,9 @@ set autochdir
 set cmdheight=3
 
 " start vim in fullscreen mode
-set fullscreen
+if has("gui_running")
+    set fullscreen
+endif
 
 " remove the toolbar/icons in MacVim - makes you look more like a wizard ;)
 set guioptions-=T
@@ -69,7 +71,9 @@ let g:solarized_contrast="low"    "default value is normal
 let g:solarized_visibility="low"    "default value is normal
 set background=dark
 colorscheme solarized
-set transparency=5
+if has("gui_running")
+    set transparency=5
+endif
 
 
 
