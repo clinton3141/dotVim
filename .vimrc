@@ -14,6 +14,7 @@ set smartindent
 set visualbell
 
 syntax on
+syntax enable
 filetype on
 filetype indent on
 filetype plugin on
@@ -66,7 +67,6 @@ set wildmode=list:longest
 " color scheme settings
 let g:solarized_contrast="low"    "default value is normal
 let g:solarized_visibility="low"    "default value is normal
-syntax enable
 set background=dark
 colorscheme solarized
 set transparency=5
