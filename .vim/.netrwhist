@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='scp://clinton@clintonmontague.co.uk//home/sites/slightlymore.co.uk/www/dailyhack/'
-let g:netrw_dirhist_2='scp://clinton@clintonmontague.co.uk//home/sites/slightlymore.co.uk/www/dailyhack/4/'
-let g:netrw_dirhist_3='scp://clinton@clintonmontague.co.uk//home/sites/slightlymore.co.uk/www/dailyhack/'
-let g:netrw_dirhist_4='scp://clinton@clintonmontague.co.uk//home/sites/slightlymore.co.uk/www/dailyhack/2/'
