@@ -66,6 +66,27 @@ set virtualedit=onemore
 " set filename completion to behave similar to bash
 set wildmode=list:longest
 
+" try to restore last known cursor position
+autocmd BufReadPost * if line("'\"") | exe "normal '\"" | endif
+
+
+
+" Folkes magic :wq in insertmode
+" http://www.ashberg.de/vim/vimrc.html
+function Wqtipper()
+    let x = confirm("Hey!\nYou're in insert mode!\n Did you mean to <ESC>:wq?"," &Yep! \n &Don't be silly! ",1,1)
+    if x == 1
+        silent! wq
+    else
+        "???
+    endif
+endfun
+iab wq <bs><esc>:call Wqtipper()<CR>
+
+
+
+
+
 " color scheme settings
 let g:solarized_contrast="low"    "default value is normal
 let g:solarized_visibility="low"    "default value is normal
