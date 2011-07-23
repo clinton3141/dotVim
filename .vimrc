@@ -1,3 +1,9 @@
+" pathogen
+filetype off 
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
+
 " housekeeping
 set nocompatible
 
@@ -48,6 +54,7 @@ set history=100
 set matchpairs +=<:>
 
 " disable the mouse, for mice are evil
+" TODO: enable selection for \oS copy/paste enable?
 set mouse=
 set mousehide
 
@@ -123,6 +130,10 @@ nmap <Leader>v `[V`]
 nnoremap <Leader>, <<
 nnoremap <Leader>. >>
 
+" quick comment/uncommenting with TComment
+map <Leader>c <c-_><c-_>
+
+
 
 " OTHER KEY MAPPINGS
 " disable arrow keys in normal/visual modes
@@ -159,7 +170,7 @@ if v:version >= 703
 endif
 
 
-" set the comment :BUILD to run ant (with default options, build.xml 
+" set the comman :BUILD to run ant (with default options, build.xml 
 " build file)
 if !exists("cmm_antbuild_loaded")
     command! Build w !ant
