@@ -8,5 +8,5 @@
 * [EasyMotion](https://github.com/mdhooge/vim-easymotion)
 * [Surround](https://github.com/tpope/vim-surround)
 
-## Colour cheme
+## Colour scheme
 [Solarized](https://github.com/pielgrzym/vim-colors-solarized)
