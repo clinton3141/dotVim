@@ -13,7 +13,7 @@ set ruler
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+set noexpandtab
 set autoindent
 set smartindent
 
@@ -163,10 +163,10 @@ nnoremap k gk
 
 " enable undo sugar if it's a big enough version
 if v:version >= 703
-	set undodir=~/.vim/undo
-	set undofile
-	set undolevels=1000 "maximum number of changes that can be undone
-	set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+    set undodir=~/.vim/undo
+    set undofile
+    set undolevels=1000 "maximum number of changes that can be undone
+    set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 endif
 
 
@@ -179,16 +179,36 @@ endif
 
 
 
+" http://vimcasts.org/episodes/tidying-whitespace/
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+" strip trailing whitespace on save of .js and .php files
+autocmd BufWritePre *.js,*.php :call <SID>StripTrailingWhitespaces()
 
 
 
-" other settings which I need to look into
-" 
+
 " move between splits with C-h, etc, rather than C-W h, really quick when you get used to it
-" map <C-H> <C-W>h
-" map <C-J> <C-W>j
-" map <C-K> <C-W>k
-" map <C-L> <C-W>l
-"
+map <C-H> <C-W>h
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+
 " centre current line in the buffer
 " nmap <space> zz
+
+
+" Spell checking
+set spelllang=en_gb
+
+nmap <silent> <Leader>s :set spell!<CR>
