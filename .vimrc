@@ -85,7 +85,7 @@ function Wqtipper()
     if x == 1
         silent! wq
     else
-        silent! i
+        " nothing to do
     endif
 endfun
 iab wq <bs><esc>:call Wqtipper()<CR>
