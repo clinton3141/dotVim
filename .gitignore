@@ -3,5 +3,5 @@
 *.netrwbook
 *.netrwhist
 
-.vim/tmp/*
-.vim/undo/*
+tmp/*.swp
+undo/*
