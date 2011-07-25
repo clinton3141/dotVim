@@ -216,3 +216,7 @@ map <Leader>- <C-W>_
 set spelllang=en_gb
 
 nmap <silent> <Leader>s :set spell!<CR>
+
+
+" <Leader>-o to split line of text
+nmap <Leader>o i<CR><Esc>kA 
