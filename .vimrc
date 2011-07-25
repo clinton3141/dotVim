@@ -54,9 +54,11 @@ set history=100
 set matchpairs +=<:>
 
 " disable the mouse, for mice are evil
-" TODO: enable selection for \oS copy/paste enable?
 set mouse=
 set mousehide
+
+" yank to OS clipboard. ("a (etc) still yanks to registers.)
+set clipboard+=unnamed
 
 
 " for easier searching
