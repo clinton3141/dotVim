@@ -85,7 +85,7 @@ function Wqtipper()
     if x == 1
         silent! wq
     else
-        "???
+        silent! i
     endif
 endfun
 iab wq <bs><esc>:call Wqtipper()<CR>
@@ -203,6 +203,10 @@ map <C-H> <C-W>h
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
+
+"map <Leader>- to maximise active split
+map <Leader>- <C-W>_
+
 
 " centre current line in the buffer
 " nmap <space> zz
