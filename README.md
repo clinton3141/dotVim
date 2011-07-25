@@ -1,12 +1,12 @@
 # My Vim setup
 
 To install:
-1. cd ~
-2. git clone https://github.com/slightlymore/dotVim
-3. mv dotVim .vim
-4. ln -s .vim/vimrc .vimrc
-5. git submodule init
-6. git submodule update
+1.  cd ~
+2.  git clone https://github.com/slightlymore/dotVim
+3.  mv dotVim .vim
+4.  ln -s .vim/vimrc .vimrc
+5.  git submodule init
+6.  git submodule update
 
 
 ## Plugins
