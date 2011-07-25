@@ -4,9 +4,6 @@
 [submodule "bundle/jslint"]
 	path = bundle/jslint
 	url = git://github.com/hallettj/jslint.vim.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = git://github.com/slightlymore/snipmate.vim.git
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = git://github.com/tomtom/tcomment_vim.git
