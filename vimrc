@@ -222,6 +222,8 @@ map <C-L> <C-W>l
 " centre current line in the buffer
 " nmap <space> zz
 
+" quicker for search and replace single chars. e.g. <Tab> r (replacement)
+nmap <Tab> n
 
 
 " These keys are so annoying - BE GONE WITH THEM!
