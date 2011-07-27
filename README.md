@@ -20,6 +20,7 @@ At the time of writing, this list is correct, but it'll inevitably get outdated.
 * [TComment](https://github.com/tomtom/tcomment_vim)
 * [EasyMotion](https://github.com/Lokaltog/vim-easymotion)
 * [Surround](https://github.com/tpope/vim-surround)
+* [PHPLint](https://github.com/Jonty/phplint.vim)
 
 ## Colour scheme
 [Solarized](https://github.com/altercation/vim-colors-solarized)

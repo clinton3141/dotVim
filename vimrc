@@ -237,11 +237,15 @@ imap <F1> <Esc>
 autocmd BufWritePre *.js,*.php :call <SID>StripTrailingWhitespaces()
 
 " from http://amix.dk/vim/vimrc.html, when vimrc is edited, reload it
-autocmd! bufwritepost .vimrc source ~/.vimrc
+autocmd! BufWritePost .vimrc source ~/.vimrc
 
 " try to restore last known cursor position
 autocmd BufReadPost * if line("'\"") | exe "normal '\"" | endif
 
 " set pman as K binding for php files 
+" (requires PEAR and pman - more info in the sidebar here: http://php.net/download-docs.php)
 autocmd FileType php setlocal keywordprg=pman
 
+
+" filetype hinting
+au BufNewFile,BufRead *.as set filetype=actionscript
