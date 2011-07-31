@@ -4,8 +4,8 @@ To install:
 
 1. cd ~
 2. git clone git@github.com:slightlymore/dotVim.git
-3. mv dotVim .vim
-4. ln -s .vim/vimrc .vimrc
+3. ln -s dotVim .vim
+4. ln -s dotVim/vimrc .vimrc
 5. git submodule init
 6. git submodule update
 
