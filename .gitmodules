@@ -25,3 +25,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/moustache"]
+	path = bundle/moustache
+	url = git://github.com/juvenn/mustache.vim.git
