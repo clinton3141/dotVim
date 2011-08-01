@@ -25,7 +25,7 @@ filetype on
 filetype indent on
 filetype plugin on
 
-set splitbelow
+set splitright
 
 
 " might get annoying - may need to turn this off again.
