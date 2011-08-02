@@ -46,6 +46,8 @@ set guioptions-=r
 
 " take a peek at what's above/below the cursor when scrolling up/down
 set scrolloff=5
+" same for left/right
+set sidescrolloff=5
 
 " put swap files in a central location instead of all over the place
 set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/tmp
