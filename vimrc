@@ -7,6 +7,8 @@ call pathogen#runtime_append_all_bundles()
 " housekeeping
 set nocompatible
 
+set showcmd
+
 set number
 set ruler
 
@@ -27,6 +29,8 @@ filetype plugin on
 
 set splitright
 
+" netrw opens files to the right
+let g:netrw_altv = 1
 
 " might get annoying - may need to turn this off again.
 set autochdir
