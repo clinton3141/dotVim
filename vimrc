@@ -109,10 +109,7 @@ let g:solarized_contrast="low"    "default value is normal
 let g:solarized_visibility="low"    "default value is normal
 set background=dark
 colorscheme solarized
-if has("gui_running")
-    " doesn't work in Lion currently
-    " set transparency=5
-endif
+
 
 
 
