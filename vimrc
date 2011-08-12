@@ -7,6 +7,8 @@ call pathogen#runtime_append_all_bundles()
 " housekeeping
 set nocompatible
 
+set showcmd
+
 set number
 set ruler
 
@@ -25,6 +27,11 @@ filetype on
 filetype indent on
 filetype plugin on
 
+set splitright
+
+" netrw opens files to the right
+let g:netrw_altv = 1
+
 " might get annoying - may need to turn this off again.
 set autochdir
 
@@ -36,11 +43,15 @@ if has("gui_running")
     set fullscreen
 endif
 
-" remove the toolbar/icons in MacVim - makes you look more like a wizard ;)
+" remove the toolbar/icons/scollbar - makes you look more like a wizard ;)
 set guioptions-=T
+set guioptions-=r
+
 
 " take a peek at what's above/below the cursor when scrolling up/down
 set scrolloff=5
+" same for left/right
+set sidescrolloff=5
 
 " put swap files in a central location instead of all over the place
 set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/tmp
@@ -74,9 +85,6 @@ set virtualedit=onemore
 
 " set filename completion to behave similar to bash
 set wildmode=list:longest
-
-" try to restore last known cursor position
-autocmd BufReadPost * if line("'\"") | exe "normal '\"" | endif
 
 
 
@@ -131,11 +139,26 @@ nmap <silent> <Leader>n :set invhls<CR>:set hls?<CR>
 " leader-v to select text which was just pasted. 
 nmap <Leader>v `[V`]
 
+" quicker indent/outdent
 nnoremap <Leader>, <<
 nnoremap <Leader>. >>
 
 " quick comment/uncommenting with TComment
 map <Leader>c <c-_><c-_>
+
+" Spell checking
+set spelllang=en_gb
+nmap <silent> <Leader>s :set spell!<CR>
+
+" <Leader>-o to split line of text
+" continue to edit the top line of the split
+nmap <Leader>O i<CR><Esc>kA
+" continue to edit the new line of the split
+nmap <Leader>o i<CR>
+
+"map <Leader>- to maximise active split
+map <Leader>- <C-W>_
+
 
 
 
@@ -196,10 +219,6 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-" strip trailing whitespace on save of .js and .php files
-autocmd BufWritePre *.js,*.php :call <SID>StripTrailingWhitespaces()
-
-
 
 
 " move between splits with C-h, etc, rather than C-W h, really quick when you get used to it
@@ -208,19 +227,36 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
-"map <Leader>- to maximise active split
-map <Leader>- <C-W>_
-
 
 " centre current line in the buffer
 " nmap <space> zz
 
-
-" Spell checking
-set spelllang=en_gb
-
-nmap <silent> <Leader>s :set spell!<CR>
+" quicker for search and replace single chars. e.g. <Tab> r (replacement)
+nmap <Tab> n
 
 
-" <Leader>-o to split line of text
-nmap <Leader>o i<CR><Esc>kA 
+" These keys are so annoying - BE GONE WITH THEM!
+map § <Esc>
+imap § <Esc>
+map <F1> <Esc>
+imap <F1> <Esc>
+
+
+
+" Autocommand goodness
+" strip trailing whitespace on save of .js and .php files
+autocmd BufWritePre *.js,*.php :call <SID>StripTrailingWhitespaces()
+
+" from http://amix.dk/vim/vimrc.html, when vimrc is edited, reload it
+autocmd! BufWritePost .vimrc source ~/.vimrc
+
+" try to restore last known cursor position
+autocmd BufReadPost * if line("'\"") | exe "normal '\"" | endif
+
+" set pman as K binding for php files 
+" (requires PEAR and pman - more info in the sidebar here: http://php.net/download-docs.php)
+autocmd FileType php setlocal keywordprg=pman
+
+
+" filetype hinting
+au BufNewFile,BufRead *.as set filetype=actionscript

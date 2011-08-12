@@ -4,8 +4,8 @@ To install:
 
 1. cd ~
 2. git clone git@github.com:slightlymore/dotVim.git
-3. mv dotVim .vim
-4. ln -s .vim/vimrc .vimrc
+3. ln -s dotVim .vim
+4. ln -s dotVim/vimrc .vimrc
 5. git submodule init
 6. git submodule update
 
@@ -20,6 +20,7 @@ At the time of writing, this list is correct, but it'll inevitably get outdated.
 * [TComment](https://github.com/tomtom/tcomment_vim)
 * [EasyMotion](https://github.com/Lokaltog/vim-easymotion)
 * [Surround](https://github.com/tpope/vim-surround)
+* [PHPLint](https://github.com/Jonty/phplint.vim)
 
 ## Colour scheme
 [Solarized](https://github.com/altercation/vim-colors-solarized)
