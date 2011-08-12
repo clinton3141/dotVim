@@ -33,7 +33,9 @@ set splitright
 let g:netrw_altv = 1
 
 " might get annoying - may need to turn this off again.
-set autochdir
+if v:version >= 703
+	set autochdir
+endif
 
 " avoid 'hit enter' prompts after remote saves (etc)
 set cmdheight=3
