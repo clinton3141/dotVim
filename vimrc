@@ -38,10 +38,6 @@ set autochdir
 " avoid 'hit enter' prompts after remote saves (etc)
 set cmdheight=3
 
-" start vim in fullscreen mode
-if has("gui_running")
-    set fullscreen
-endif
 
 " remove the toolbar/icons/scollbar - makes you look more like a wizard ;)
 set guioptions-=T
