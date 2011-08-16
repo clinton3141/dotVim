@@ -13,11 +13,13 @@ set number
 set ruler
 
 set tabstop=4
+set autoindent
 set shiftwidth=4
 set softtabstop=4
-set noexpandtab
-set autoindent
 set smartindent
+set noexpandtab
+
+
 
 set visualbell
 
