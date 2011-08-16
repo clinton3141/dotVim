@@ -12,12 +12,12 @@ set showcmd
 set number
 set ruler
 
-set autoindent
+set noexpandtab
 set smartindent
-set tabstop=4
+set autoindent
 set shiftwidth=4
 set softtabstop=4
-set noexpandtab
+set tabstop=4
 
 set visualbell
 
@@ -105,12 +105,16 @@ iab wq <bs><esc>:call Wqtipper()<CR>
 
 
 " color scheme settings
-let g:solarized_contrast="low"    "default value is normal
-let g:solarized_visibility="low"    "default value is normal
-set background=dark
-" older Vims don't seem to be able to load colour schemes through pathogen.
-" (or it could be a dodgy build.) Either way, supress the error message
-silent! colorscheme solarized
+if has("gui_running")
+	set background=dark
+	let g:solarized_contrast="low"    "default value is normal
+	let g:solarized_visibility="low"    "default value is normal
+	colorscheme solarized
+else
+	" dodgy build on a remote server complains about not being able 
+	" to find colour scheme - the 'silent!' will shut it up.
+	silent! colorscheme desert
+endif
 
 
 
