@@ -72,6 +72,7 @@ set clipboard+=unnamed
 set ignorecase
 set smartcase
 set hlsearch
+set incsearch
 
 " for easier substition (assumme /g)
 set gdefault 
