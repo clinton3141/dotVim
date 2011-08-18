@@ -40,10 +40,6 @@ endif
 " avoid 'hit enter' prompts after remote saves (etc)
 set cmdheight=3
 
-" start vim in fullscreen mode
-if has("gui_running")
-    set fullscreen
-endif
 
 " remove the toolbar/icons/scollbar - makes you look more like a wizard ;)
 set guioptions-=T
@@ -78,6 +74,7 @@ set clipboard+=unnamed
 set ignorecase
 set smartcase
 set hlsearch
+set incsearch
 
 " for easier substition (assumme /g)
 set gdefault 
