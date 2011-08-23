@@ -257,3 +257,9 @@ autocmd FileType php setlocal keywordprg=pman
 
 " filetype hinting
 au BufNewFile,BufRead *.as set filetype=actionscript
+
+
+
+
+" Fix JSlint on OSX Lion
+let $JS_CMD='node'
