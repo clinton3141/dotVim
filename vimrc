@@ -265,3 +265,21 @@ au BufNewFile,BufRead *.as set filetype=actionscript
 
 " Fix JSlint on OSX Lion
 let $JS_CMD='node'
+
+
+" auto balance braces in a variety of ways
+inoremap { {}<Left>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {{ {
+inoremap {} {}
+
+inoremap ( ()<Left>
+inoremap (<CR> (<CR>)<Esc>O
+inoremap (( (
+inoremap () ()
+
+inoremap [ []<Left>
+inoremap [<CR> [<CR>]<Esc>O
+inoremap [[ [
+inoremap [] []
+
