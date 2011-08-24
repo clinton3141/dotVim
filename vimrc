@@ -106,15 +106,14 @@ iab wq <bs><esc>:call Wqtipper()<CR>
 " color scheme settings
 if has("gui_running")
 	set background=dark
-	let g:solarized_contrast="low"    "default value is normal
-	let g:solarized_visibility="low"    "default value is normal
+	let g:solarized_contrast="high"    "default value is normal
+	let g:solarized_visibility="high"    "default value is normal
 	colorscheme solarized
 else
 	" dodgy build on a remote server complains about not being able 
 	" to find colour scheme - the 'silent!' will shut it up.
 	silent! colorscheme desert
 endif
-
 
 
 
@@ -282,4 +281,22 @@ inoremap [ []<Left>
 inoremap [<CR> [<CR>]<Esc>O
 inoremap [[ [
 inoremap [] []
+
+
+
+
+
+" load host settings from local file (for security so that they're not listed
+" on github!)
+" 
+" Example line in this file:
+" 
+" echo mapping <F5> to scp://username@host//
+" map <F5> <Esc>:vsp<CR>:e scp://username@host//path/to/working/dir/<CR>
+if filereadable(".vimrc.hosts")
+	echo "Found hosts file, loading..."
+	source ./.vimrc.hosts
+else
+	echo "No hosts file found"
+endif
 

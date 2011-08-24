@@ -1,0 +1,2 @@
+echo "<F5> -> hostname"
+map <F5> <Esc>:vsp<CR>:e scp://username@host//path/to/working/dir/<CR>
