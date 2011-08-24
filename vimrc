@@ -264,7 +264,7 @@ au BufNewFile,BufRead *.as set filetype=actionscript
 let $JS_CMD='node'
 
 
-" auto balance braces in a variety of ways
+" auto balance braces/quotes in a variety of ways
 inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
@@ -280,6 +280,9 @@ inoremap [<CR> [<CR>]<Esc>O
 inoremap [[ [
 inoremap [] []
 
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap ` ``<Left>
 
 
 
