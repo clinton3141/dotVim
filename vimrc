@@ -122,7 +122,6 @@ endif
 
 
 
-
 " LEADER KEY MAPPINGS
 let mapleader = ","
 
@@ -280,4 +279,22 @@ inoremap [ []<Left>
 inoremap [<CR> [<CR>]<Esc>O
 inoremap [[ [
 inoremap [] []
+
+
+
+
+
+" load host settings from local file (for security so that they're not listed
+" on github!)
+" 
+" Example line in this file:
+" 
+" echo mapping <F5> to scp://username@host//
+" map <F5> <Esc>:vsp<CR>:e scp://username@host//path/to/working/dir/<CR>
+if filereadable(".vimrc.hosts")
+	echo "Found hosts file, loading..."
+	source ./.vimrc.hosts
+else
+	echo "No hosts file found"
+endif
 
