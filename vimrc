@@ -152,9 +152,11 @@ nmap <Leader>O i<CR><Esc>kA
 " continue to edit the new line of the split
 nmap <Leader>o i<CR>
 
-"map <Leader>- to maximise active split
+" map <Leader>- to maximise active split
 map <Leader>- <C-W>_
 
+" <Leader> s <space> saves all buffers in current window
+nmap <Leader>s<Space> :windo :w<CR>
 
 
 
@@ -215,6 +217,9 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+
+" ctrl-s saves all buffers in the current window
+map <C-s> windo :w
 
 
 " move between splits with C-h, etc, rather than C-W h, really quick when you get used to it
