@@ -155,6 +155,9 @@ nmap <Leader>o i<CR>
 "map <Leader>- to maximise active split
 map <Leader>- <C-W>_
 
+" <Leader>s<space> saves all buffers in current window
+nmap <Leader>s<Space> :wa<CR>
+
 
 
 
