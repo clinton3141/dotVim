@@ -154,9 +154,11 @@ nmap <Leader>O i<CR><Esc>kA
 " continue to edit the new line of the split
 nmap <Leader>o i<CR>
 
-"map <Leader>- to maximise active split
+" map <Leader>- to maximise active split
 map <Leader>- <C-W>_
 
+" <Leader>s<space> saves all buffers in current window
+nmap <Leader>s<Space> :wa<CR>
 
 
 
@@ -218,6 +220,9 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 
+" ctrl-s saves all buffers in the current window
+map <C-s> windo :w
+
 
 " move between splits with C-h, etc, rather than C-W h, really quick when you get used to it
 map <C-H> <C-W>h
@@ -266,7 +271,7 @@ au BufNewFile,BufRead *.as set filetype=actionscript
 let $JS_CMD='node'
 
 
-" auto balance braces in a variety of ways
+" auto balance braces/quotes in a variety of ways
 inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
@@ -282,6 +287,9 @@ inoremap [<CR> [<CR>]<Esc>O
 inoremap [[ [
 inoremap [] []
 
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap ` ``<Left>
 
 
 
