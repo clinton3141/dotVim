@@ -91,8 +91,6 @@ function Wqtipper()
     let x = confirm("Hey!\nYou're in insert mode!\n Did you mean to <ESC>:wq?"," &Yep! \n &Don't be silly! ",1,1)
     if x == 1
         silent! wq
-    else
-        " nothing to do
     endif
 endfun
 iab wq <bs><esc>:call Wqtipper()<CR>
@@ -152,9 +150,11 @@ nmap <Leader>O i<CR><Esc>kA
 " continue to edit the new line of the split
 nmap <Leader>o i<CR>
 
-"map <Leader>- to maximise active split
+" map <Leader>- to maximise active split
 map <Leader>- <C-W>_
 
+" <Leader>s<space> saves all buffers in current window
+nmap <Leader>s<Space> :wa<CR>
 
 
 
@@ -189,10 +189,8 @@ if v:version >= 703
     set undodir=~/.vim/undo
     set undofile
     set undolevels=1000 "maximum number of changes that can be undone
-    set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+    set undoreload=1000 "maximum number lines to save for undo on a buffer reload
 endif
-
-
 
 
 
@@ -275,8 +273,11 @@ inoremap [[ [
 inoremap [] []
 
 inoremap " ""<Left>
+inoremap "" ""<Left>
 inoremap ' ''<Left>
+inoremap '' ''<Left>
 inoremap ` ``<Left>
+inoremap `` ``<Left>
 
 
 
