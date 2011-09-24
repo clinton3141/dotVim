@@ -193,12 +193,6 @@ if v:version >= 703
 endif
 
 
-" set the comman :BUILD to run ant (with default options, build.xml 
-" build file)
-if !exists("cmm_antbuild_loaded")
-    command! Build w !ant
-    let cmm_antbuild_loaded = 1
-endif
 
 
 
