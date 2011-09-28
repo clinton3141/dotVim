@@ -1,3 +1,7 @@
+" a lof of credit for this housekeeping section of this vimrc
+" file goes to http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+
+
 " pathogen
 filetype off 
 call pathogen#helptags()
@@ -18,6 +22,20 @@ set autoindent
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
+
+
+set encoding=utf-8
+set backspace=indent,eol,start
+set laststatus=2
+
+" so I know when a line of code is getting obese
+set colorcolumn=80
+
+" worth a try - might get annoying, but I'd like to give it a go.
+" makes line-based motions much easier at the expense of line numbers,
+" but the only time I use line numbers are during debugging where a line
+" number is given anyway.
+set relativenumber
 
 set visualbell
 
@@ -73,6 +91,11 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+
+
+" I already know perl regex - why learn a new crazy scheme?
+nnoremap / /\v
+vnoremap / /\v
 
 " for easier substition (assumme /g)
 set gdefault 
@@ -295,4 +318,3 @@ if filereadable(".vimrc.hosts")
 else
 	echo "No hosts file found"
 endif
-
