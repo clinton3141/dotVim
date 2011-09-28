@@ -193,6 +193,13 @@ vnoremap <down> <nop>
 vnoremap <left> <nop>
 vnoremap <right> <nop>
 
+" now I'm used to these, remove them from insert mode too? (experiment!)
+" the hope is to return to normal mode as often as possible.
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
 
 " up/down on lines which wrap on screen move up/down screen lines instead of
 " buffer lines (thanks to @nrocy)
