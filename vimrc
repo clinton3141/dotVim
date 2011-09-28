@@ -325,3 +325,10 @@ if filereadable(".vimrc.hosts")
 else
 	echo "No hosts file found"
 endif
+
+
+
+
+" save files when they lose focus. I /THINK/ this is what I want - time will
+" tell!
+au FocusLost * :wa
