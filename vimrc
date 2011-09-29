@@ -1,3 +1,7 @@
+" a lof of credit for this housekeeping section of this vimrc
+" file goes to http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+
+
 " pathogen
 filetype off 
 call pathogen#helptags()
@@ -18,6 +22,20 @@ set autoindent
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
+
+
+set encoding=utf-8
+set backspace=indent,eol,start
+set laststatus=2
+
+" so I know when a line of code is getting obese
+set colorcolumn=80
+
+" worth a try - might get annoying, but I'd like to give it a go.
+" makes line-based motions much easier at the expense of line numbers,
+" but the only time I use line numbers are during debugging where a line
+" number is given anyway.
+set relativenumber
 
 set visualbell
 
@@ -75,6 +93,11 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+
+
+" I already know perl regex - why learn a new crazy scheme?
+nnoremap / /\v
+vnoremap / /\v
 
 " for easier substition (assumme /g)
 set gdefault 
@@ -172,6 +195,13 @@ vnoremap <down> <nop>
 vnoremap <left> <nop>
 vnoremap <right> <nop>
 
+" now I'm used to these, remove them from insert mode too? (experiment!)
+" the hope is to return to normal mode as often as possible.
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
 
 " up/down on lines which wrap on screen move up/down screen lines instead of
 " buffer lines (thanks to @nrocy)
@@ -193,7 +223,6 @@ if v:version >= 703
     set undolevels=1000 "maximum number of changes that can be undone
     set undoreload=1000 "maximum number lines to save for undo on a buffer reload
 endif
-
 
 
 
@@ -276,8 +305,11 @@ inoremap [[ [
 inoremap [] []
 
 inoremap " ""<Left>
+inoremap "" ""<Left>
 inoremap ' ''<Left>
+inoremap '' ''<Left>
 inoremap ` ``<Left>
+inoremap `` ``<Left>
 
 
 
@@ -296,3 +328,9 @@ else
 	echo "No hosts file found"
 endif
 
+
+
+
+" save files when they lose focus. I /THINK/ this is what I want - time will
+" tell!
+au FocusLost * :wa
