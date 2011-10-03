@@ -29,13 +29,17 @@ set backspace=indent,eol,start
 set laststatus=2
 
 " so I know when a line of code is getting obese
-set colorcolumn=80
+if v:version >= 703
+	set colorcolumn=80
+endif
 
 " worth a try - might get annoying, but I'd like to give it a go.
 " makes line-based motions much easier at the expense of line numbers,
 " but the only time I use line numbers are during debugging where a line
 " number is given anyway.
-set relativenumber
+if v:version >= 703
+	set relativenumber
+endif
 
 set visualbell
 
