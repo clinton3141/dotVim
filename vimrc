@@ -281,6 +281,9 @@ autocmd FileType php setlocal keywordprg=pman
 " filetype hinting
 au BufNewFile,BufRead *.as set filetype=actionscript
 
+" <F6> sorts CSS properties alphabetically
+autocmd FileType css nmap <buffer> <F6> :g#\({\n\)\@<=#.,/}/sort<CR>
+
 
 
 
