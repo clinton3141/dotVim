@@ -99,10 +99,6 @@ set hlsearch
 set incsearch
 
 
-" I already know perl regex - why learn a new crazy scheme?
-nnoremap / /\v
-vnoremap / /\v
-
 " for easier substition (assumme /g)
 set gdefault 
 
