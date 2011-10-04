@@ -38,7 +38,7 @@ endif
 " but the only time I use line numbers are during debugging where a line
 " number is given anyway.
 if v:version >= 703
-	set relativenumber
+	setg relativenumber
 endif
 
 set visualbell
@@ -331,10 +331,3 @@ if filereadable(".vimrc.hosts")
 else
 	echo "No hosts file found"
 endif
-
-
-
-
-" save files when they lose focus. I /THINK/ this is what I want - time will
-" tell!
-au FocusLost * :wa
