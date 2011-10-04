@@ -272,6 +272,8 @@ autocmd! BufWritePost .vimrc source ~/.vimrc
 
 " try to restore last known cursor position
 autocmd BufReadPost * if line("'\"") | exe "normal '\"" | endif
+" relativenumber isn't set globally - needs to get set for each buffer
+autocmd BufNewFile,BufRead * set relativenumber
 
 " set pman as K binding for php files 
 " (requires PEAR and pman - more info in the sidebar here: http://php.net/download-docs.php)
