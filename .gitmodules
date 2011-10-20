@@ -37,3 +37,6 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
+[submodule "bundle/octave.vim"]
+	path = bundle/octave.vim
+	url = git://github.com/vim-scripts/octave.vim--.git

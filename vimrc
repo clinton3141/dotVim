@@ -33,13 +33,6 @@ if v:version >= 703
 	set colorcolumn=80
 endif
 
-" worth a try - might get annoying, but I'd like to give it a go.
-" makes line-based motions much easier at the expense of line numbers,
-" but the only time I use line numbers are during debugging where a line
-" number is given anyway.
-if v:version >= 703
-	setg relativenumber
-endif
 
 set visualbell
 
@@ -273,8 +266,6 @@ autocmd! BufWritePost .vimrc source ~/.vimrc
 
 " try to restore last known cursor position
 autocmd BufReadPost * if line("'\"") | exe "normal '\"" | endif
-" relativenumber isn't set globally - needs to get set for each buffer
-autocmd BufNewFile,BufRead * set relativenumber
 
 " set pman as K binding for php files 
 " (requires PEAR and pman - more info in the sidebar here: http://php.net/download-docs.php)
