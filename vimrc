@@ -126,9 +126,10 @@ iab wq <bs><esc>:call Wqtipper()<CR>
 
 " color scheme settings
 if has("gui_running")
-	set background=dark
 	let g:solarized_contrast="high"    "default value is normal
 	let g:solarized_visibility="high"    "default value is normal
+	syntax enable
+	set background=light
 	colorscheme solarized
 else
 	" dodgy build on a remote server complains about not being able 
