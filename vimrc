@@ -301,11 +301,11 @@ inoremap [[ [
 inoremap [] []
 
 inoremap " ""<Left>
-inoremap "" ""<Left>
+inoremap "" "<Left>
 inoremap ' ''<Left>
-inoremap '' ''<Left>
+inoremap '' '<Left>
 inoremap ` ``<Left>
-inoremap `` ``<Left>
+inoremap `` `<Left>
 
 
 
