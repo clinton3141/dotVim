@@ -204,7 +204,13 @@ vnoremap k gk
 nnoremap j gj
 nnoremap k gk
 
-
+" quicker scroll down/up with <s-j> / <s-k> - useful for skimming through code.
+" <s-j> to combine lines annoys me anyway!
+" I also don't do much shell scripting, so I won't miss <s-k> opening a man page
+nnoremap <s-j> 2j
+nnoremap <s-k> 2k
+vnoremap <s-j> 2j
+vnoremap <s-k> 2k
 
 
 
