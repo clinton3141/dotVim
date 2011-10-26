@@ -325,8 +325,5 @@ inoremap `` `<Left>
 " echo mapping <F5> to scp://username@host//
 " map <F5> <Esc>:vsp<CR>:e scp://username@host//path/to/working/dir/<CR>
 if filereadable(".vimrc.hosts")
-	echo "Found hosts file, loading..."
 	source ./.vimrc.hosts
-else
-	echo "No hosts file found"
 endif
