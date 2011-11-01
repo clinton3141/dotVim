@@ -308,11 +308,13 @@ inoremap [[ [
 inoremap [] []
 
 inoremap " ""<Left>
-inoremap "" "<Left>
+inoremap "" "
+
 inoremap ' ''<Left>
-inoremap '' '<Left>
+inoremap '' '
+
 inoremap ` ``<Left>
-inoremap `` `<Left>
+inoremap `` `
 
 
 
