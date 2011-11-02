@@ -1,40 +1,35 @@
 " a lof of credit for this housekeeping section of this vimrc
 " file goes to http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
-
 " pathogen
 filetype off 
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
-
 " housekeeping
 set nocompatible
-
 set showcmd
-
 set number
 set ruler
-
 set noexpandtab
 set smartindent
 set autoindent
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
-
-
 set encoding=utf-8
 set backspace=indent,eol,start
 set laststatus=2
-
-" so I know when a line of code is getting obese
-if v:version >= 703
-	set colorcolumn=80
-endif
-
-
 set visualbell
+
+" for easier searching
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" for easier substition (assumme /g)
+set gdefault 
 
 syntax on
 syntax enable
@@ -42,12 +37,15 @@ filetype on
 filetype indent on
 filetype plugin on
 
+" netrw to open files to the right
+let g:netrw_altv = 1
 set splitright
 
-" netrw opens files to the right
-let g:netrw_altv = 1
+" so I know when a line of code is getting obese
+if v:version >= 703
+	set colorcolumn=80
+endif
 
-" might get annoying - may need to turn this off again.
 if v:version >= 703
 	set autochdir
 endif
@@ -55,11 +53,9 @@ endif
 " avoid 'hit enter' prompts after remote saves (etc)
 set cmdheight=3
 
-
 " remove the toolbar/icons/scollbar - makes you look more like a wizard ;)
 set guioptions-=T
 set guioptions-=r
-
 
 " take a peek at what's above/below the cursor when scrolling up/down
 set scrolloff=5
@@ -70,9 +66,8 @@ set sidescrolloff=5
 set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/tmp
 set directory=~/.vim/tmp,~/.tmp,~/tmp,/tmp
 
-
 " remember a higher number of ex commands
-set history=100
+set history=50
 
 " for jumping around inside XML style tags
 set matchpairs +=<:>
@@ -84,38 +79,11 @@ set mousehide
 " yank to OS clipboard. ("a (etc) still yanks to registers.)
 set clipboard+=unnamed
 
-
-" for easier searching
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-
-
-" for easier substition (assumme /g)
-set gdefault 
-
 " enable being able to go one letter past the last letter in a line
 set virtualedit=onemore
 
 " set filename completion to behave similar to bash
 set wildmode=list:longest
-
-
-
-" Folkes magic :wq in insertmode
-" http://www.ashberg.de/vim/vimrc.html
-function Wqtipper()
-    let x = confirm("Hey!\nYou're in insert mode!\n Did you mean to <ESC>:wq?"," &Yep! \n &Don't be silly! ",1,1)
-    if x == 1
-        silent! wq
-    endif
-endfun
-iab wq <bs><esc>:call Wqtipper()<CR>
-
-
-
-
 
 " color scheme settings
 if has("gui_running")
@@ -133,18 +101,8 @@ endif
 
 
 
-
-
-
-
-
-
 " LEADER KEY MAPPINGS
 let mapleader = ","
-
-" set <Leader>= to indent whole file then return to current location (thanks
-" to https://github.com/nrocy/dotfiles/blob/master/.vimrc)
-nnoremap <Leader>= G=gg<C-o><C-o>
 
 " highlight searches by default, toggle search highlighting on/off easily with leader n
 nmap <silent> <Leader>n :set invhls<CR>:set hls?<CR>
@@ -172,9 +130,6 @@ nmap <Leader>o i<CR>
 " map <Leader>- to maximise active split
 map <Leader>- <C-W>_
 
-" <Leader>s<space> saves all buffers in current window
-nmap <Leader>s<Space> :wa<CR>
-
 
 
 " OTHER KEY MAPPINGS
@@ -196,7 +151,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-
 " up/down on lines which wrap on screen move up/down screen lines instead of
 " buffer lines (thanks to @nrocy)
 vnoremap j gj
@@ -207,12 +161,10 @@ nnoremap k gk
 " quicker scroll down/up with <s-j> / <s-k> - useful for skimming through code.
 " <s-j> to combine lines annoys me anyway!
 " I also don't do much shell scripting, so I won't miss <s-k> opening a man page
-nnoremap <s-j> 2j
-nnoremap <s-k> 2k
-vnoremap <s-j> 2j
-vnoremap <s-k> 2k
-
-
+nnoremap <s-j> 3j
+nnoremap <s-k> 3k
+vnoremap <s-j> 3j
+vnoremap <s-k> 3k
 
 
 
@@ -248,12 +200,8 @@ map <C-K> <C-W>k
 map <C-L> <C-W>l
 
 
-" centre current line in the buffer
-" nmap <space> zz
-
 " quicker for search and replace single chars. e.g. <Tab> r (replacement)
 nmap <Tab> n
-
 
 " These keys are so annoying - BE GONE WITH THEM!
 map § <Esc>
@@ -262,8 +210,7 @@ map <F1> <Esc>
 imap <F1> <Esc>
 
 
-
-" Autocommand goodness
+" AUTOCOMMAND GOODNESS
 " strip trailing whitespace on save of .js and .php files
 autocmd BufWritePre *.js,*.php :call <SID>StripTrailingWhitespaces()
 
@@ -272,11 +219,6 @@ autocmd! BufWritePost .vimrc source ~/.vimrc
 
 " try to restore last known cursor position
 autocmd BufReadPost * if line("'\"") | exe "normal '\"" | endif
-
-" set pman as K binding for php files 
-" (requires PEAR and pman - more info in the sidebar here: http://php.net/download-docs.php)
-autocmd FileType php setlocal keywordprg=pman
-
 
 " filetype hinting
 au BufNewFile,BufRead *.as set filetype=actionscript
