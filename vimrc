@@ -21,6 +21,7 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set laststatus=2
 set visualbell
+set lazyredraw " don't redraw during macros
 
 " for easier searching
 set ignorecase
@@ -130,6 +131,17 @@ nmap <Leader>o i<CR>
 " map <Leader>- to maximise active split
 map <Leader>- <C-W>_
 
+" thanks to https://github.com/davejamesmiller/linux-config/blob/master/.vimrc#L87
+nmap <silent> <Leader>1t :set tabstop=1 softtabstop=1 shiftwidth=1<CR>
+nmap <silent> <Leader>2t :set tabstop=2 softtabstop=2 shiftwidth=2<CR>
+nmap <silent> <Leader>3t :set tabstop=3 softtabstop=3 shiftwidth=3<CR>
+nmap <silent> <Leader>4t :set tabstop=4 softtabstop=4 shiftwidth=4<CR>
+nmap <silent> <Leader>5t :set tabstop=5 softtabstop=5 shiftwidth=5<CR>
+nmap <silent> <Leader>6t :set tabstop=6 softtabstop=6 shiftwidth=6<CR>
+nmap <silent> <Leader>7t :set tabstop=7 softtabstop=7 shiftwidth=7<CR>
+nmap <silent> <Leader>8t :set tabstop=8 softtabstop=8 shiftwidth=8<CR>
+
+
 
 
 " OTHER KEY MAPPINGS
@@ -175,6 +187,14 @@ if v:version >= 703
     set undolevels=200 "maximum number of changes that can be undone
     set undoreload=100 "maximum number lines to save for undo on a buffer reload
 endif
+
+if v:version >= 700
+	xnoremap < <gv
+	xnoremap > >gv
+endif
+
+nmap <Leader>z :GundoToggle<CR>
+nmap <c-z> :GundoToggle<CR>
 
 
 
