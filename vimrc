@@ -31,6 +31,7 @@ set incsearch
 " for easier substition (assumme /g)
 set gdefault 
 
+" syntax highlighting loveliness
 syntax on
 syntax enable
 filetype on
@@ -46,6 +47,7 @@ if v:version >= 703
 	set colorcolumn=80
 endif
 
+" automatically chdir to that of the working file
 if v:version >= 703
 	set autochdir
 endif
@@ -73,8 +75,9 @@ set history=50
 set matchpairs +=<:>
 
 " disable the mouse, for mice are evil
-set mouse=
-set mousehide
+" don't really need these anymore - have learnt to leave the mouse alone
+" set mouse=
+" set mousehide
 
 " yank to OS clipboard. ("a (etc) still yanks to registers.)
 set clipboard+=unnamed
@@ -166,8 +169,6 @@ nnoremap <s-k> 3k
 vnoremap <s-j> 3j
 vnoremap <s-k> 3k
 
-
-
 " enable undo sugar if it's a big enough version
 if v:version >= 703
     set undodir=~/.vim/undo
@@ -175,8 +176,6 @@ if v:version >= 703
     set undolevels=200 "maximum number of changes that can be undone
     set undoreload=100 "maximum number lines to save for undo on a buffer reload
 endif
-
-
 
 " http://vimcasts.org/episodes/tidying-whitespace/
 function! <SID>StripTrailingWhitespaces()
@@ -191,9 +190,7 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-
-
-" move between splits with C-h, etc, rather than C-W h, really quick when you get used to it
+" move between splits with C-h, etc, rather than C-W h
 map <C-H> <C-W>h
 map <C-J> <C-W>j
 map <C-K> <C-W>k
