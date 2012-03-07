@@ -114,6 +114,9 @@ nmap <silent> <Leader>n :set invhls<CR>:set hls?<CR>
 " leader-v to select text which was just pasted. 
 nmap <Leader>v `[V`]
 
+" quick set filetype to javascript - something I do a lot
+nnoremap <Leader>j :set filetype=javascript<CR>
+
 " quicker indent/outdent
 nnoremap <Leader>, <<
 nnoremap <Leader>. >>
