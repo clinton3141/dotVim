@@ -83,9 +83,6 @@ set matchpairs +=<:>
 " yank to OS clipboard. ("a (etc) still yanks to registers.)
 set clipboard+=unnamed
 
-" enable being able to go one letter past the last letter in a line
-set virtualedit=onemore
-
 " set filename completion to behave similar to bash
 set wildmode=list:longest
 
