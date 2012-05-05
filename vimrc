@@ -17,7 +17,7 @@ set autoindent
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
-set encoding=utf-8
+set encoding=utf-8 nobomb
 set backspace=indent,eol,start
 set laststatus=2
 set visualbell
@@ -111,12 +111,12 @@ nmap <silent> <Leader>n :set invhls<CR>:set hls?<CR>
 " leader-v to select text which was just pasted. 
 nmap <Leader>v `[V`]
 
-" quick set filetype to javascript - something I do a lot
-nnoremap <Leader>j :set filetype=javascript<CR>
-
 " quicker indent/outdent
 nnoremap <Leader>, <<
 nnoremap <Leader>. >>
+
+" quickly run the current buffer through node.js - instant console!
+inoremap <Leader>j <Esc>:w! /tmp/CMM_vimconsole.js<CR><ESC>!node %<CR><ESC><CR>!rm %<CR>
 
 " quick comment/uncommenting with TComment
 map <Leader>c <c-_><c-_>
@@ -143,6 +143,8 @@ nmap <silent> <Leader>5t :set tabstop=5 softtabstop=5 shiftwidth=5<CR>
 nmap <silent> <Leader>6t :set tabstop=6 softtabstop=6 shiftwidth=6<CR>
 nmap <silent> <Leader>7t :set tabstop=7 softtabstop=7 shiftwidth=7<CR>
 nmap <silent> <Leader>8t :set tabstop=8 softtabstop=8 shiftwidth=8<CR>
+
+
 
 
 
@@ -290,3 +292,9 @@ inoremap `` `
 if filereadable(".vimrc.hosts")
 	source ./.vimrc.hosts
 endif
+
+
+
+
+
+
