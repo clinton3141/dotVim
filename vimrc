@@ -66,8 +66,15 @@ set scrolloff=5
 set sidescrolloff=5
 
 " put swap files in a central location instead of all over the place
-set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/tmp
-set directory=~/.vim/tmp,~/.tmp,~/tmp,/tmp
+set backupdir=~/.vim/backups
+set directory=~/.vim/tmp
+" enable undo sugar if it's enabled
+if exists("&undodir")
+    set undodir=~/.vim/undo
+    set undofile
+    set undolevels=200 "maximum number of changes that can be undone
+    set undoreload=100 "maximum number lines to save for undo on a buffer reload
+endif
 
 " remember a higher number of ex commands
 set history=50
@@ -183,13 +190,6 @@ nnoremap <s-k> 3k
 vnoremap <s-j> 3j
 vnoremap <s-k> 3k
 
-" enable undo sugar if it's a big enough version
-if v:version >= 703
-    set undodir=~/.vim/undo
-    set undofile
-    set undolevels=200 "maximum number of changes that can be undone
-    set undoreload=100 "maximum number lines to save for undo on a buffer reload
-endif
 
 if v:version >= 700
 	xnoremap < <gv
