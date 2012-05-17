@@ -2,9 +2,12 @@
 " file goes to http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
 " pathogen
+" the weird off then on is to fix non-zero exit code under Mac OSX -
+" http://andrewho.co.uk/weblog/vim-pathogen-with-mutt-and-git
+filetype on
 filetype off 
-call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 " housekeeping
 set nocompatible
