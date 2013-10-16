@@ -14,12 +14,12 @@ set nocompatible
 set showcmd
 set number
 set ruler
-set noexpandtab
+set expandtab
 set smartindent
 set autoindent
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set encoding=utf-8 nobomb
 set backspace=indent,eol,start
 set laststatus=2
