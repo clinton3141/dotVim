@@ -10,9 +10,6 @@
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = git://github.com/slightlymore/snipmate.vim.git
 [submodule "bundle/phplint"]
 	path = bundle/phplint
 	url = git://github.com/Jonty/phplint.vim.git
