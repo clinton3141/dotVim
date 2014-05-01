@@ -42,10 +42,6 @@ filetype on
 filetype indent on
 filetype plugin on
 
-" netrw to open files to the right
-let g:netrw_altv = 1
-set splitright
-
 " so I know when a line of code is getting obese
 if v:version >= 703
 	set colorcolumn=80
@@ -113,7 +109,7 @@ endif
 
 
 " LEADER KEY MAPPINGS
-let mapleader = ","
+" let mapleader = ","
 
 " highlight searches by default, toggle search highlighting on/off easily with leader n
 nmap <silent> <Leader>n :set invhls<CR>:set hls?<CR>
@@ -125,9 +121,6 @@ nmap <Leader>v `[V`]
 nnoremap <Leader>, <<
 nnoremap <Leader>. >>
 
-" quickly run the current buffer through node.js - instant console!
-inoremap <Leader>j <Esc>:w! /tmp/CMM_vimconsole.js<CR><ESC>!node %<CR><ESC><CR>!rm %<CR>
-
 " quick comment/uncommenting with TComment
 map <Leader>c <c-_><c-_>
 
@@ -135,74 +128,12 @@ map <Leader>c <c-_><c-_>
 set spelllang=en_gb
 nmap <silent> <Leader>s :set spell!<CR>
 
-" <Leader>-o to split line of text
-" continue to edit the top line of the split
-nmap <Leader>O i<CR><Esc>kA
-" continue to edit the new line of the split
-nmap <Leader>o i<CR>
-
-" map <Leader>- to maximise active split
-map <Leader>- <C-W>_
-
-" thanks to https://github.com/davejamesmiller/linux-config/blob/master/.vimrc#L87
-nmap <silent> <Leader>1t :set tabstop=1 softtabstop=1 shiftwidth=1<CR>
-nmap <silent> <Leader>2t :set tabstop=2 softtabstop=2 shiftwidth=2<CR>
-nmap <silent> <Leader>3t :set tabstop=3 softtabstop=3 shiftwidth=3<CR>
-nmap <silent> <Leader>4t :set tabstop=4 softtabstop=4 shiftwidth=4<CR>
-nmap <silent> <Leader>5t :set tabstop=5 softtabstop=5 shiftwidth=5<CR>
-nmap <silent> <Leader>6t :set tabstop=6 softtabstop=6 shiftwidth=6<CR>
-nmap <silent> <Leader>7t :set tabstop=7 softtabstop=7 shiftwidth=7<CR>
-nmap <silent> <Leader>8t :set tabstop=8 softtabstop=8 shiftwidth=8<CR>
-
-
-
-
-
-
-" OTHER KEY MAPPINGS
-" disable arrow keys in normal/visual modes
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
-
-" now I'm used to these, remove them from insert mode too? (experiment!)
-" the hope is to return to normal mode as often as possible.
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
 " up/down on lines which wrap on screen move up/down screen lines instead of
 " buffer lines (thanks to @nrocy)
 vnoremap j gj
 vnoremap k gk
 nnoremap j gj
 nnoremap k gk
-
-" quicker scroll down/up with <s-j> / <s-k> - useful for skimming through code.
-" <s-j> to combine lines annoys me anyway!
-" I also don't do much shell scripting, so I won't miss <s-k> opening a man page
-nnoremap <s-j> 3j
-nnoremap <s-k> 3k
-vnoremap <s-j> 3j
-vnoremap <s-k> 3k
-
-
-if v:version >= 700
-	xnoremap < <gv
-	xnoremap > >gv
-endif
-
-nmap <Leader>z :GundoToggle<CR>
-nmap <c-z> :GundoToggle<CR>
-
-
 
 " http://vimcasts.org/episodes/tidying-whitespace/
 function! <SID>StripTrailingWhitespaces()
@@ -223,16 +154,11 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
-
-" quicker for search and replace single chars. e.g. <Tab> r (replacement)
-nmap <Tab> n
-
 " These keys are so annoying - BE GONE WITH THEM!
 map § <Esc>
 imap § <Esc>
 map <F1> <Esc>
 imap <F1> <Esc>
-
 
 " AUTOCOMMAND GOODNESS
 " strip trailing whitespace on save of .js and .php files
@@ -246,58 +172,4 @@ autocmd BufReadPost * if line("'\"") | exe "normal '\"" | endif
 
 " filetype hinting
 au BufNewFile,BufRead *.as set filetype=actionscript
-
-" <F6> sorts CSS properties alphabetically
-autocmd FileType css nmap <buffer> <F6> :g#\({\n\)\@<=#.,/}/sort<CR>
-
-
-
-
-" Fix JSlint on OSX Lion
-let $JS_CMD='node'
-
-
-" auto balance braces/quotes in a variety of ways
-inoremap { {}<Left>
-inoremap {<CR> {<CR>}<Esc>O
-inoremap {{ {
-inoremap {} {}
-
-inoremap ( ()<Left>
-inoremap (<CR> (<CR>)<Esc>O
-inoremap (( (
-inoremap () ()
-
-inoremap [ []<Left>
-inoremap [<CR> [<CR>]<Esc>O
-inoremap [[ [
-inoremap [] []
-
-inoremap " ""<Left>
-inoremap "" "
-
-inoremap ' ''<Left>
-inoremap '' '
-
-inoremap ` ``<Left>
-inoremap `` `
-
-
-
-
-" load host settings from local file (for security so that they're not listed
-" on github!)
-" 
-" Example line in this file:
-" 
-" echo mapping <F5> to scp://username@host//
-" map <F5> <Esc>:vsp<CR>:e scp://username@host//path/to/working/dir/<CR>
-if filereadable(".vimrc.hosts")
-	source ./.vimrc.hosts
-endif
-
-
-
-
-
 
