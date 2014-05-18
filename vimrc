@@ -87,6 +87,19 @@ endif
 
 set history=50
 
+"""""""""""""""""
+" Syntax and lint
+"""""""""""""""""
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_error_symbol="✗"
+let g:syntastic_warning_symbol="⚠"
+let g:syntastic_style_error_symbol="s✗"
+let g:syntastic_style_warning_symbol="s⚠"
+let g:syntastic_auto_jump=0
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=3
+let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': ['js'], 'passive_filetypes': ['html'] }
+
 
 """""""""""""""""""
 " keystroke shizzle
