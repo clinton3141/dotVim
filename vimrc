@@ -21,6 +21,7 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'scrooloose/syntastic'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Shougo/neocomplcache'
+Bundle 'kien/rainbow_parentheses.vim'
 
 filetype on
 filetype indent on
@@ -37,6 +38,7 @@ set visualbell
 set title " append filename (dir) - VIM to terminal title
 set spelllang=en_gb
 
+au VimEnter * RainbowParenthesesToggleAll
 
 """"""""""""""""""""""""""""""""
 " see (or don't) what's going on
