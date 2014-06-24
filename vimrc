@@ -8,7 +8,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'hallettj/jslint.vim'
+" Bundle 'hallettj/jslint.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-surround'
 Bundle 'altercation/vim-colors-solarized'
@@ -17,6 +17,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'bling/vim-airline'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'scrooloose/syntastic'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Valloric/YouCompleteMe'
