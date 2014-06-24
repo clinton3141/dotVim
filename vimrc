@@ -8,12 +8,12 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'hallettj/jslint'
+Bundle 'hallettj/jslint.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-surround'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
-Bundle 'sjl/gundo'
+Bundle 'sjl/gundo.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'bling/vim-airline'
