@@ -20,6 +20,7 @@ Bundle 'bling/vim-airline'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'scrooloose/syntastic'
 Bundle 'pangloss/vim-javascript'
+Bundle 'marijnh/tern_for_vim'
 Bundle 'Valloric/YouCompleteMe'
 
 filetype on
