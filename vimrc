@@ -1,11 +1,26 @@
 """"""""""
-" pathogen
+" Vundle
 """"""""""
-filetype on
+set nocompatible
 filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" Bundle 'hallettj/jslint.vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-surround'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
+Bundle 'sjl/gundo.vim'
+Bundle 'mattn/emmet-vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'bling/vim-airline'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'scrooloose/syntastic'
+Bundle 'pangloss/vim-javascript'
+Bundle 'Shougo/neocomplcache'
 
 filetype on
 filetype indent on
@@ -15,7 +30,6 @@ filetype plugin on
 " housekeeping
 """"""""""""""
 set encoding=utf-8 nobomb
-set nocompatible
 set ruler
 set shiftwidth=2 softtabstop=2 tabstop=2 smartindent autoindent expandtab
 set backspace=indent,eol,start

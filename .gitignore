@@ -5,3 +5,6 @@
 
 tmp/*.swp
 undo/*
+
+# plugins now installed with Vundle's :BundleInstall
+bundle/*
