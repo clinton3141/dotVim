@@ -164,3 +164,10 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+
+
+""""""""""""""
+" Autocommands
+""""""""""""""
+" disable paste mode after leaving insert mode
+au InsertLeave * set nopaste
