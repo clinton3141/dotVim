@@ -167,3 +167,10 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+
+""""""""""""""
+" Autocommands
+""""""""""""""
+" disable paste mode after leaving insert mode
+au InsertLeave * set nopaste
