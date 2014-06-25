@@ -20,8 +20,12 @@ Bundle 'bling/vim-airline'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'scrooloose/syntastic'
 Bundle 'pangloss/vim-javascript'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'Valloric/YouCompleteMe'
+if has("python")
+  Bundle 'marijnh/tern_for_vim'
+  Bundle 'Valloric/YouCompleteMe'
+else
+  Bundle 'Shougo/neocomplcache'
+endif
 Bundle 'kien/rainbow_parentheses.vim'
 
 filetype on
