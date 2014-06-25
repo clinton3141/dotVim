@@ -25,6 +25,10 @@ if has("python")
   Bundle 'Valloric/YouCompleteMe'
 else
   Bundle 'Shougo/neocomplcache'
+  let g:neocomplcache_enable_at_startup = 1
+  let g:neocomplcache_enable_smart_case = 1
+  let g:neocomplcache_min_syntax_length = 3
+
 endif
 Bundle 'kien/rainbow_parentheses.vim'
 
