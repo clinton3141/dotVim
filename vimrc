@@ -32,9 +32,15 @@ else
 endif
 Bundle 'kien/rainbow_parentheses.vim'
 
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules)|\.(git|hg|svn)$'
+
 filetype on
 filetype indent on
 filetype plugin on
+
 
 """"""""""""""
 " housekeeping
