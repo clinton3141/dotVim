@@ -173,7 +173,8 @@ nmap <Leader>v `[V`]
 map <Leader>c <c-_><c-_>
 nmap <silent> <Leader>s :set spell!<CR>
 " more convenient save
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>ww :w<CR>
+nnoremap <Leader>wa :wa<CR>
 
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
