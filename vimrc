@@ -182,17 +182,25 @@ nnoremap <Leader>ww :w<CR>
 nnoremap <Leader>wa :wa<CR>
 
 
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+
+""""""""""""""
+" Autocommands
+""""""""""""""
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+autocmd FileType javascript,php autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-
-""""""""""""""
-" Autocommands
-""""""""""""""
 " disable paste mode after leaving insert mode
 au InsertLeave * set nopaste
