@@ -67,7 +67,6 @@ set laststatus=2
 set showcmd
 set lazyredraw " don't redraw during macros
 set number
-set colorcolumn=80
 set list
 set listchars=tab:›\ ,eol:¬
 " syntax highlighting loveliness
